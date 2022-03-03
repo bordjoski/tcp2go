@@ -8,7 +8,7 @@ tcp2go is port scanner. A fast one.
 
 
 ## Installation
-tcp2go is not published module. To install it, clone this repository and run
+tcp2go is not published module. To install it, run the following
 
     git clone https://github.com/bordjoski/tcp2go.git
     cd tcp2go  
