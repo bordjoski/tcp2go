@@ -2,7 +2,6 @@ package cmd
 
 import (
 	"fmt"
-	"math/rand"
 	"net"
 	"sort"
 	"time"
@@ -14,7 +13,7 @@ import (
 // scanCmd represents the scan command
 var scanCmd = &cobra.Command{
 	Use:   "scan",
-	Short: "Scan for opet ports",
+	Short: "Scan for open ports",
 	Long:  `Scan for open ports for given target. It will also show service version if known.`,
 	Run:   scan,
 }
@@ -23,7 +22,7 @@ func worker(target string, ports, results chan int) {
 	for p := range ports {
 		address := fmt.Sprintf("%s:%d", target, p)
 		var dialer net.Dialer
-		dialer.Timeout = time.Second * 3
+		dialer.Timeout = time.Second * 1
 		conn, err := dialer.Dial("tcp", address)
 		if err != nil {
 			results <- 0
@@ -31,7 +30,7 @@ func worker(target string, ports, results chan int) {
 		}
 
 		conn.Close()
-		time.Sleep(time.Duration(50) + time.Millisecond*time.Duration(rand.Int31n(250)))
+		//time.Sleep(time.Duration(50) + time.Millisecond*time.Duration(rand.Int31n(250)))
 		results <- p
 	}
 }

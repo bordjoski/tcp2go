@@ -13,7 +13,7 @@ var cfgFile string
 var rootCmd = &cobra.Command{
 	Use:   "tcp2go",
 	Short: "Port scanner",
-	Long:  `tcp2go is a port scanner. A fast one.`,
+	Long:  `tcp2go is a tcp scanner.`,
 }
 
 func Execute() {
