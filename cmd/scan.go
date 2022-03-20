@@ -30,7 +30,6 @@ func worker(target string, ports, results chan int) {
 		}
 
 		conn.Close()
-		//time.Sleep(time.Duration(50) + time.Millisecond*time.Duration(rand.Int31n(250)))
 		results <- p
 	}
 }
@@ -67,6 +66,7 @@ func scan(cmd *cobra.Command, args []string) {
 	for _, port := range openports {
 		proto = netdb.GetProtoByName("tcp")
 		serv = netdb.GetServByPort(port, proto)
+
 		fmt.Println("---------------------------------------")
 		if serv != nil {
 			fmt.Println("Service name : ", serv.Name)
