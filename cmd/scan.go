@@ -14,8 +14,9 @@ import (
 var scanCmd = &cobra.Command{
 	Use:   "scan",
 	Short: "Scan for open ports",
-	Long:  `Scan for open ports for given target. It will also show service version if known.`,
-	Run:   scan,
+	Long: `Scan for open ports for given target. 
+	It will also show service version if known (based on common port).`,
+	Run: scan,
 }
 
 func worker(target string, ports, results chan int) {

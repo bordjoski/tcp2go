@@ -1,11 +1,31 @@
 # tcp2go
-tcp2go is a simple port scanner.
+tcp2go is tcp utility tool with following capabilites:
+* tcp scanner
+* tcp proxy
+* Replication of netcat arbitrary bash commands execution
+* client (to interact with remote listener)
 
 
 ## Usage
+### Scanning
     tcp2go scan <target>    
 
+This command will scan all the ports and will output only the ports that are open. 
 
+### Proxy
+    tcp2go proxy -p 3001 -t example.com:3032
+
+This command will start listener on port 3001 and will proxy the clients to given target example.com:3032
+
+### Arbitary code execution
+    tcp2go exec -p 3002
+This command will start listener on port 3002 and will execute the input
+
+To connect and interact with server, interactive client can be started by running
+
+    tcp2go connect -t localhost:3002    
+
+From there, please behaive.
 ## Installation
 tcp2go is not published module. To install it, clone this repository and run
 

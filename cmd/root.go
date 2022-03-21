@@ -12,8 +12,13 @@ var cfgFile string
 
 var rootCmd = &cobra.Command{
 	Use:   "tcp2go",
-	Short: "Port scanner",
-	Long:  `tcp2go is a tcp scanner.`,
+	Short: "tcp utility tool",
+	Long: `tcp2go has following capabilities:
+	* tcp scanner
+	* tcp proxy
+	* Replication of netcat arbitrary bash commands execution
+	* client to interact with remote listener
+	`,
 }
 
 func Execute() {
@@ -27,7 +32,6 @@ func init() {
 	cobra.OnInitialize(initConfig)
 
 	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.tcp2go.yaml)")
-	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }
 
 func initConfig() {
