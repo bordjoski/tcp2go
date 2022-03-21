@@ -49,7 +49,7 @@ func runProxy(cmd *cobra.Command, args []string) {
 		if err != nil {
 			log.Fatalln("Can not accept connection")
 		}
-		log.Println("Accepting connection...")
+		log.Println("Proxing connection to ", host)
 		go handle(conn)
 	}
 }

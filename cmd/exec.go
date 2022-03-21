@@ -42,6 +42,7 @@ func runComm(cmd *cobra.Command, args []string) {
 		log.Fatalln("Unable to bind to port", port)
 		os.Exit(1)
 	}
+	fmt.Println("Accepting connecton on port", port)
 	for {
 		conn, err := l.Accept()
 		if err != nil {
