@@ -18,7 +18,7 @@ This command will scan all the ports and will output only the ports that are ope
 This command will start listener on port 3001 and will proxy the clients to given target example.com:3032
 
 ### Arbitary code execution
-netcat contains feature that allows stdin and stdout of any arbitrary programs to be redirected over tcp, turning a single command execution vulnerability into operating system shell access. This feature is usually excluded from builds and this is replication of this feature.
+netcat contains feature that allows stdin and stdout of any arbitrary programs to be redirected over tcp, turning a single command execution vulnerability into operating system shell access. This feature is usually excluded from builds and tcp2go exec command is replication of netcats feature.
 
     tcp2go exec -p 3002
 This command will start listener on port 3002 and will execute the input
